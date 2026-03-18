@@ -6,32 +6,35 @@
 ## 👥 Group Members
 | Member | Contribution |
 |--------|-------------|
-| Sheryl Otieno | Image collection, Face model, CLI app |
-| Jok John Maker | Audio collection, Voice model, augmentations |
-| Innocent Nangah | Data merge, EDA, Feature engineering |
-| Vincent Mugabo | Product model, evaluation, report |
+| Sheryl | Task 1: Data loading, EDA, data cleaning, merge, feature engineering |
+| Jok | Task 2: Image collection, augmentation, feature extraction, face model, system simulation, GitHub |
+| Innocent | Task 3: Audio collection, augmentation, feature extraction, voice model |
+| Vincent | Task 4: Product recommendation model, evaluation, model saving |
 
 ---
 
 ## 📁 Repository Structure
-
 ```
-├── multimodal_pipeline.ipynb   ← Main Jupyter notebook (all steps)
-├── app.py                      ← CLI simulation app
+├── multimodal_pipeline.ipynb
+├── app.py
+├── face_model.py
+├── voice_model.py
+├── product_model.py
+├── requirements.txt
 ├── data/
 │   ├── customer_social_profiles.csv
 │   ├── customer_transactions.csv
 │   └── merged_dataset.csv
 ├── images/
-│   ├── member1/  (neutral.jpg, smiling.jpg, surprised.jpg)
-│   ├── member2/
-│   ├── member3/
-│   └── member4/
-├── audio/
-│   ├── member1/  (yes_approve.wav, confirm_transaction.wav)
-│   ├── member2/
-│   ├── member3/
-│   └── member4/
+│   ├── sheryl/  (neutral.jpg, smiling.jpg, surprised.jpg)
+│   ├── jok/
+│   ├── innocent/
+│   └── vincent/
+├── sound/
+│   ├── sheryl/  (yes_approve.wav, confirm_transaction.wav, ...)
+│   ├── jok/
+│   ├── innocent/
+│   └── vincent/
 ├── features/
 │   ├── image_features.csv
 │   └── audio_features.csv
@@ -42,26 +45,27 @@
 │   └── (scalers and encoders)
 └── augmented/
     ├── images/
-    └── audio/
+    └── sound/
 ```
 
 ---
 
 ## ⚙️ Setup & Installation
-
 ```bash
-pip install pandas numpy matplotlib seaborn scikit-learn opencv-python \
-            Pillow librosa soundfile xgboost joblib scipy
+python3 -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
 ```
 
 ---
 
 ## 🚀 How to Run
 
-### Step 1: Add your data
-- Place facial images in `images/memberX/` named `neutral.jpg`, `smiling.jpg`, `surprised.jpg`
-- Place voice recordings in `audio/memberX/` named `yes_approve.wav`, `confirm_transaction.wav`
-- Place datasets in `data/`
+### Step 1: Clone the repository
+```bash
+git clone https://github.com/JokMaker/Multimodal-Data-Preprocessing.git
+cd Multimodal-Data-Preprocessing
+```
 
 ### Step 2: Run the Jupyter Notebook
 ```bash
@@ -80,7 +84,7 @@ Run all cells from top to bottom. This will:
 python app.py
 
 # Direct authorized transaction
-python app.py --image images/member1/neutral.jpg --audio audio/member1/yes_approve.wav
+python app.py --image images/sheryl/smiling.jpg --audio sound/sheryl/yes_approve.wav
 
 # Unauthorized simulation
 python app.py --unauth
@@ -89,7 +93,6 @@ python app.py --unauth
 ---
 
 ## 🔄 System Flow
-
 ```
 User Input
     │
@@ -98,6 +101,9 @@ User Input
     │ PASS
     ▼
 [Voice Check] ── FAIL ──→ ACCESS DENIED
+    │ PASS
+    ▼
+[Identity Match Check] ── FAIL ──→ ACCESS DENIED
     │ PASS
     ▼
 [Product Recommendation]
@@ -112,16 +118,19 @@ User Input
 
 | Model | Algorithm | Purpose |
 |-------|-----------|---------|
-| Face Recognition | Random Forest | Identify which member from face image |
+| Face Recognition | Random Forest | Identify member from face image |
 | Voiceprint Verification | Logistic Regression | Verify member identity from voice |
-| Product Recommendation | XGBoost | Predict product based on customer profile |
+| Product Recommendation | XGBoost | Predict product from customer profile |
 
 ---
 
-## 📈 Evaluation Metrics
-- Accuracy
-- F1 Score (weighted)
-- Confusion Matrix
+## 📈 Model Performance
+
+| Model | Accuracy | F1 Score |
+|-------|----------|----------|
+| Face Recognition | 1.0000 | 1.0000 |
+| Voiceprint Verification | 0.8750 | 0.8750 |
+| Product Recommendation | 0.5349 | 0.5173 |
 
 ---
 
