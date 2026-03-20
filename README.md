@@ -135,7 +135,7 @@ User Input
 ---
 
 ## Demo Video
-[https://drive.google.com/drive/folders/15nqE0bCxTmPU2XZ4ygOoQ5wsm9iL8Vqg?usp=sharing]
+https://drive.google.com/drive/folders/15nqE0bCxTmPU2XZ4ygOoQ5wsm9iL8Vqg?usp=sharing
 
 ## Report Link
-[https://docs.google.com/document/d/1N08t9xReuPNMh2tc94JI5Cn1tIJvejH0/edit]
+https://docs.google.com/document/d/1N08t9xReuPNMh2tc94JI5Cn1tIJvejH0/edit
