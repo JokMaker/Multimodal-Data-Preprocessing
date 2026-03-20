@@ -3,7 +3,7 @@
 
 ---
 
-## 👥 Group Members
+## Group Members
 | Member | Contribution |
 |--------|-------------|
 | Sheryl | Task 1: Data loading, EDA, data cleaning, merge, feature engineering |
@@ -13,7 +13,7 @@
 
 ---
 
-## 📁 Repository Structure
+## Repository Structure
 ```
 ├── multimodal_pipeline.ipynb
 ├── app.py
@@ -50,7 +50,7 @@
 
 ---
 
-## ⚙️ Setup & Installation
+## Setup & Installation
 ```bash
 python3 -m venv venv
 source venv/bin/activate
@@ -59,7 +59,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 ### Step 1: Clone the repository
 ```bash
@@ -92,7 +92,7 @@ python app.py --unauth
 
 ---
 
-## 🔄 System Flow
+## System Flow
 ```
 User Input
     │
@@ -114,7 +114,7 @@ User Input
 
 ---
 
-## 📊 Models Used
+## Models Used
 
 | Model | Algorithm | Purpose |
 |-------|-----------|---------|
@@ -124,7 +124,7 @@ User Input
 
 ---
 
-## 📈 Model Performance
+## Model Performance
 
 | Model | Accuracy | F1 Score |
 |-------|----------|----------|
